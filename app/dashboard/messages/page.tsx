@@ -1,8 +1,7 @@
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
 import { prisma } from "@/lib/prisma"
-import MessageForm from "@/components/MessageForm"
-import MessagesInbox from "@/components/MessagesInbox"
+import MessagingClient from "@/components/MessagingClient"
 
 export default async function MessagesPage() {
   const session = await getServerSession(authOptions)
@@ -78,36 +77,13 @@ export default async function MessagesPage() {
   }
 
   return (
-    <div>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Messagerie</h1>
-        <p className="mt-2 text-gray-600">
-          {isAdmin
-            ? "Gérez vos messages et communiquez avec les apprenants"
-            : "Consultez vos messages et notifications"}
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {isAdmin && (
-          <div className="lg:col-span-1">
-            <MessageForm
-              users={users}
-              courses={courses}
-              senderId={session?.user?.id || ""}
-            />
-          </div>
-        )}
-
-        <div className={isAdmin ? "lg:col-span-2" : "lg:col-span-3"}>
-          <MessagesInbox
-            receivedMessages={receivedMessages}
-            sentMessages={sentMessages}
-            currentUserId={session?.user?.id || ""}
-            isAdmin={isAdmin}
-          />
-        </div>
-      </div>
-    </div>
+    <MessagingClient
+      receivedMessages={receivedMessages}
+      sentMessages={sentMessages}
+      users={users}
+      courses={courses}
+      senderId={session?.user?.id || ""}
+      isAdmin={isAdmin}
+    />
   )
 }
