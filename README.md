@@ -74,6 +74,25 @@ Le système utilise NextAuth.js avec authentification par credentials :
 - Sessions JWT
 - Routes protégées par middleware
 
+## 🌐 Déploiement Production (Vercel)
+
+**Guide complet : [VERCEL_SETUP.md](./VERCEL_SETUP.md)**
+
+La plateforme est déployée sur Vercel avec PostgreSQL (Neon.tech).
+
+### Variables d'environnement requises :
+```
+DATABASE_URL=postgresql://...
+NEXTAUTH_SECRET=FFcQWk8Ce7MK5ej3VOdIJQ31y0oLa4EZS6cAUsDIzO0=
+NEXTAUTH_URL=https://votre-app.vercel.app
+```
+
+### Migration rapide :
+```bash
+export DATABASE_URL="postgresql://..."
+./scripts/setup-production-db.sh
+```
+
 ## 💾 Base de données
 
 ### Schéma Prisma

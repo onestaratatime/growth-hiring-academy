@@ -87,7 +87,7 @@ export default function CourseEditForm({ course }: { course: Course }) {
   return (
     <div className="space-y-8">
       <div className="bg-white shadow-sm rounded-lg p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-6">
+        <h2 className="text-xl font-semibold text-slate-100 mb-6">
           Informations générales
         </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -173,7 +173,7 @@ export default function CourseEditForm({ course }: { course: Course }) {
 
       {modules.length > 0 && (
         <div className="bg-white shadow-sm rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+          <h2 className="text-xl font-semibold text-slate-100 mb-6 flex items-center">
             <Video className="h-5 w-5 mr-2 text-blue-600" />
             Modules de formation ({modules.length})
           </h2>
@@ -187,7 +187,7 @@ export default function CourseEditForm({ course }: { course: Course }) {
                   <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-3">
                     Leçon {index + 1}
                   </span>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-slate-100 mb-2">
                     {module.title}
                   </h3>
                   {module.description && (

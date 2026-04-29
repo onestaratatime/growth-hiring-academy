@@ -115,7 +115,7 @@ export default function MessagesInbox({
                     </div>
                     <div>
                       <div className="flex items-center space-x-2">
-                        <p className="text-sm font-semibold text-gray-900">
+                        <p className="text-sm font-semibold text-slate-100">
                           {message.sender.name || message.sender.email}
                         </p>
                         {activeTab === "sent" && isBroadcast && (

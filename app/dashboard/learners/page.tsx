@@ -36,7 +36,7 @@ export default async function LearnersPage() {
     <div>
       <div className="sm:flex sm:items-center sm:justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">CRM Apprenants</h1>
+          <h1 className="text-3xl font-bold text-slate-100">CRM Apprenants</h1>
           <p className="mt-2 text-gray-600">
             Gérez vos apprenants et suivez leur progression
           </p>
@@ -109,14 +109,14 @@ export default async function LearnersPage() {
                           </div>
                         </div>
                         <div className="ml-4">
-                          <div className="text-sm font-medium text-gray-900">
+                          <div className="text-sm font-medium text-slate-100">
                             {learner.name || "Sans nom"}
                           </div>
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{learner.email}</div>
+                      <div className="text-sm text-slate-100">{learner.email}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
@@ -131,7 +131,7 @@ export default async function LearnersPage() {
                             style={{ width: `${avgProgress}%` }}
                           />
                         </div>
-                        <span className="text-sm text-gray-900">{avgProgress.toFixed(0)}%</span>
+                        <span className="text-sm text-slate-100">{avgProgress.toFixed(0)}%</span>
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">

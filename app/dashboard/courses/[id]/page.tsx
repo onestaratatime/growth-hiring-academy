@@ -36,12 +36,12 @@ export default async function CourseEditPage({
       <div className="mb-8">
         <Link
           href="/dashboard/courses"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-4"
+          className="inline-flex items-center text-sm text-gray-600 hover:text-slate-100 mb-4"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Retour aux formations
         </Link>
-        <h1 className="text-3xl font-bold text-gray-900">Modifier la formation</h1>
+        <h1 className="text-3xl font-bold text-slate-100">Modifier la formation</h1>
         <p className="mt-2 text-gray-600">
           Mettez à jour les informations et les modules de votre formation
         </p>

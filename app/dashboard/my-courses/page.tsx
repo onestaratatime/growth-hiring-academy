@@ -24,7 +24,7 @@ export default async function MyCoursesPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Mes formations</h1>
+        <h1 className="text-3xl font-bold text-slate-100">Mes formations</h1>
         <p className="mt-2 text-gray-600">
           Accédez à vos formations et suivez votre progression
         </p>
@@ -36,7 +36,7 @@ export default async function MyCoursesPage() {
             <div className="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
               <Play className="h-8 w-8 text-blue-600" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <h3 className="text-lg font-semibold text-slate-100 mb-2">
               Aucune formation pour le moment
             </h3>
             <p className="text-gray-600">
@@ -73,7 +73,7 @@ export default async function MyCoursesPage() {
 
                 <div className="p-6">
                   <Link href={`/dashboard/my-courses/${enrollment.id}`}>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600 transition">
+                    <h3 className="text-xl font-semibold text-slate-100 mb-2 hover:text-blue-600 transition">
                       {course.title}
                     </h3>
                   </Link>

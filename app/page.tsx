@@ -31,7 +31,7 @@ export default async function Home() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-5xl font-bold text-slate-100 mb-6">
             Recrutez différemment
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -46,7 +46,7 @@ export default async function Home() {
         </div>
 
         <div className="mb-16 text-center">
-          <p className="text-2xl font-semibold text-gray-900">
+          <p className="text-2xl font-semibold text-slate-100">
             +100 entreprises ont adopté nos méthodes pour trouver leurs pépites
           </p>
         </div>
@@ -76,7 +76,7 @@ export default async function Home() {
 
         <div className="bg-white rounded-2xl shadow-xl p-12">
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            <h3 className="text-3xl font-bold text-slate-100 mb-6 text-center">
               Ce que vous allez apprendre
             </h3>
             <ul className="space-y-4 text-lg text-gray-700">
@@ -149,7 +149,7 @@ function FeatureCard({
   return (
     <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
       <div className="mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+      <h3 className="text-xl font-semibold text-slate-100 mb-2">{title}</h3>
       <p className="text-gray-600">{description}</p>
     </div>
   )

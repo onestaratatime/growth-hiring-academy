@@ -60,7 +60,7 @@ export default function MessageList({
                   </span>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-900">
+                  <p className="text-sm font-medium text-slate-100">
                     {message.sender.name || message.sender.email}
                   </p>
                   <p className="text-xs text-gray-500">

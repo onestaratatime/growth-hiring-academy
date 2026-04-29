@@ -54,7 +54,7 @@ export default async function LearnerDetailPage({
       <div className="mb-8">
         <Link
           href="/dashboard/learners"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-4"
+          className="inline-flex items-center text-sm text-gray-600 hover:text-slate-100 mb-4"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Retour aux apprenants
@@ -68,7 +68,7 @@ export default async function LearnerDetailPage({
                 </span>
               </div>
               <div className="ml-4">
-                <h1 className="text-3xl font-bold text-gray-900">{learner.name || "Sans nom"}</h1>
+                <h1 className="text-3xl font-bold text-slate-100">{learner.name || "Sans nom"}</h1>
                 <div className="flex items-center mt-2 space-x-4">
                   <div className="flex items-center text-gray-600">
                     <Mail className="h-4 w-4 mr-2" />
@@ -97,7 +97,7 @@ export default async function LearnerDetailPage({
                   <dt className="text-sm font-medium text-gray-500 truncate">
                     Formations inscrites
                   </dt>
-                  <dd className="text-3xl font-semibold text-gray-900">{totalEnrollments}</dd>
+                  <dd className="text-3xl font-semibold text-slate-100">{totalEnrollments}</dd>
                 </dl>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default async function LearnerDetailPage({
                   <dt className="text-sm font-medium text-gray-500 truncate">
                     Formations complétées
                   </dt>
-                  <dd className="text-3xl font-semibold text-gray-900">{completedEnrollments}</dd>
+                  <dd className="text-3xl font-semibold text-slate-100">{completedEnrollments}</dd>
                 </dl>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default async function LearnerDetailPage({
                   <dt className="text-sm font-medium text-gray-500 truncate">
                     Progression moyenne
                   </dt>
-                  <dd className="text-3xl font-semibold text-gray-900">
+                  <dd className="text-3xl font-semibold text-slate-100">
                     {averageProgress.toFixed(0)}%
                   </dd>
                 </dl>
@@ -145,7 +145,7 @@ export default async function LearnerDetailPage({
 
       <div className="bg-white rounded-lg shadow-sm">
         <div className="px-6 py-4 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-900">Formations</h2>
+          <h2 className="text-xl font-semibold text-slate-100">Formations</h2>
         </div>
         <div className="divide-y divide-gray-200">
           {learner.enrollments.length === 0 ? (
@@ -161,7 +161,7 @@ export default async function LearnerDetailPage({
                 <div key={enrollment.id} className="p-6 hover:bg-gray-50">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      <h3 className="text-lg font-semibold text-slate-100 mb-2">
                         {course.title}
                       </h3>
                       <p className="text-sm text-gray-600 mb-4">{course.description}</p>

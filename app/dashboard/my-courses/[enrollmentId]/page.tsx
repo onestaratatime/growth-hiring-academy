@@ -50,12 +50,12 @@ export default async function CourseViewPage({
       <div className="mb-8">
         <Link
           href="/dashboard/my-courses"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-4"
+          className="inline-flex items-center text-sm text-gray-600 hover:text-slate-100 mb-4"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Retour à mes formations
         </Link>
-        <h1 className="text-3xl font-bold text-gray-900">
+        <h1 className="text-3xl font-bold text-slate-100">
           {enrollment.course.title}
         </h1>
         <p className="mt-2 text-gray-600">{enrollment.course.description}</p>
@@ -73,7 +73,7 @@ export default async function CourseViewPage({
           </div>
 
           <div className="mt-6 bg-white rounded-lg shadow-sm p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-slate-100 mb-4">
               À propos de cette formation
             </h2>
             <p className="text-gray-600">{enrollment.course.description}</p>
@@ -83,7 +83,7 @@ export default async function CourseViewPage({
         <div className="lg:col-span-1">
           <div className="bg-white rounded-lg shadow-sm p-6">
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-slate-100 mb-3">
                 Votre progression
               </h3>
               <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
@@ -104,7 +104,7 @@ export default async function CourseViewPage({
 
             {enrollment.course.modules.length > 0 && (
               <>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                <h3 className="text-lg font-semibold text-slate-100 mb-3">
                   Modules ({enrollment.course.modules.length})
                 </h3>
                 <div className="space-y-2">
@@ -127,7 +127,7 @@ export default async function CourseViewPage({
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
                             <div className="flex items-center">
-                              <span className="text-sm font-medium text-gray-900">
+                              <span className="text-sm font-medium text-slate-100">
                                 {index + 1}. {module.title}
                               </span>
                             </div>

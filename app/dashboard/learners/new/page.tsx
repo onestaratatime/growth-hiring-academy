@@ -48,12 +48,12 @@ export default function NewLearnerPage() {
       <div className="mb-8">
         <Link
           href="/dashboard/learners"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-4"
+          className="inline-flex items-center text-sm text-gray-600 hover:text-slate-100 mb-4"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Retour aux apprenants
         </Link>
-        <h1 className="text-3xl font-bold text-gray-900">Ajouter un apprenant</h1>
+        <h1 className="text-3xl font-bold text-slate-100">Ajouter un apprenant</h1>
         <p className="mt-2 text-gray-600">
           Créez un nouveau compte apprenant
         </p>

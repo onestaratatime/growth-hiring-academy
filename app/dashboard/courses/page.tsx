@@ -30,7 +30,7 @@ export default async function CoursesPage() {
     <div>
       <div className="sm:flex sm:items-center sm:justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Gestion des formations</h1>
+          <h1 className="text-3xl font-bold text-slate-100">Gestion des formations</h1>
           <p className="mt-2 text-gray-600">
             Créez et gérez vos formations
           </p>
@@ -80,7 +80,7 @@ export default async function CoursesPage() {
 
               <div className="p-6">
                 <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-gray-900 flex-1">
+                  <h3 className="text-lg font-semibold text-slate-100 flex-1">
                     {course.title}
                   </h3>
                   <div className="ml-2">
@@ -90,7 +90,7 @@ export default async function CoursesPage() {
                         Publié
                       </span>
                     ) : (
-                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-slate-200">
                         <EyeOff className="h-3 w-3 mr-1" />
                         Brouillon
                       </span>
