@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "env": {
+    "DATABASE_URL": "file:./dev.db",
+    "NEXTAUTH_URL": "https://growth-hiring-academy.vercel.app",
+    "NEXTAUTH_SECRET": "growth-hiring-secret-key-change-in-production"
+  }
+}
