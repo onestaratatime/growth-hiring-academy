@@ -8,8 +8,8 @@ export default async function MessagesPage() {
   const session = await getServerSession(authOptions)
   const isAdmin = session?.user?.role === "ADMIN"
 
-  let receivedMessages = []
-  let sentMessages = []
+  let receivedMessages: any[] = []
+  let sentMessages: any[] = []
   let users: any[] = []
   let courses: any[] = []
 

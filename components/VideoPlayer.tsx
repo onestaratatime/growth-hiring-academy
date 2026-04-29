@@ -19,7 +19,7 @@ export default function VideoPlayer({
   const videoRef = useRef<HTMLVideoElement>(null)
   const router = useRouter()
   const [progress, setProgress] = useState(0)
-  const progressUpdateInterval = useRef<NodeJS.Timeout>()
+  const progressUpdateInterval = useRef<NodeJS.Timeout | undefined>(undefined)
 
   useEffect(() => {
     const video = videoRef.current
