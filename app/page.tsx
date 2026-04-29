@@ -12,12 +12,12 @@ export default async function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <nav className="bg-white/80 backdrop-blur-sm border-b border-gray-200">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <nav className="bg-slate-800/90 backdrop-blur-sm border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-blue-600">Growth Hiring</h1>
+            <div className="flex items-center space-x-3">
+              <img src="/logo-dark.svg" alt="Growth Hiring" className="h-10" />
             </div>
             <Link
               href="/login"

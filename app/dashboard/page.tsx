@@ -59,10 +59,10 @@ export default async function DashboardPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">
+        <h1 className="text-3xl font-bold text-slate-100">
           {isAdmin ? "Tableau de bord administrateur" : "Mon tableau de bord"}
         </h1>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-slate-400">
           {isAdmin
             ? "Vue d'ensemble de votre plateforme de formation"
             : "Suivez votre progression et accédez à vos formations"}
@@ -121,11 +121,11 @@ export default async function DashboardPage() {
         )}
       </div>
 
-      <div className="mt-8 bg-white rounded-lg shadow-sm p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">
+      <div className="mt-8 bg-slate-800 rounded-lg shadow-sm p-6 border border-slate-700">
+        <h2 className="text-xl font-semibold text-slate-100 mb-4">
           Bienvenue sur Growth Hiring
         </h2>
-        <p className="text-gray-600">
+        <p className="text-slate-400">
           {isAdmin
             ? "Utilisez le menu de navigation pour gérer vos apprenants, créer des formations et communiquer avec vos utilisateurs."
             : "Accédez à vos formations via le menu 'Mes Formations' et consultez vos messages pour recevoir vos accès."}
@@ -147,7 +147,7 @@ function StatCard({
   color: string
 }) {
   return (
-    <div className="bg-white overflow-hidden shadow-sm rounded-lg">
+    <div className="bg-slate-800 overflow-hidden shadow-sm rounded-lg border border-slate-700">
       <div className="p-5">
         <div className="flex items-center">
           <div className={`flex-shrink-0 rounded-md p-3 ${color}`}>
@@ -155,8 +155,8 @@ function StatCard({
           </div>
           <div className="ml-5 w-0 flex-1">
             <dl>
-              <dt className="text-sm font-medium text-gray-500 truncate">{title}</dt>
-              <dd className="text-3xl font-semibold text-gray-900">{value}</dd>
+              <dt className="text-sm font-medium text-slate-400 truncate">{title}</dt>
+              <dd className="text-3xl font-semibold text-slate-100">{value}</dd>
             </dl>
           </div>
         </div>

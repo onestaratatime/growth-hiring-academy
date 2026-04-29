@@ -1,0 +1,12 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- G letter with upward arrow -->
+  <path d="M25 15C18.37 15 13 20.37 13 27C13 33.63 18.37 39 25 39C28.31 39 31.28 37.65 33.47 35.47L30.53 32.53C29.11 33.95 27.16 34.82 25 34.82C20.9 34.82 17.55 31.56 17.18 27.5H38V27C38 20.37 32.63 15 26 15H25ZM17.18 23.5C17.55 19.44 20.9 16.18 25 16.18C29.1 16.18 32.45 19.44 32.82 23.5H17.18Z" fill="#60A5FA"/>
+
+  <!-- Upward trending arrow -->
+  <path d="M42 35L50 27L58 32L68 22V18H64L58 24L50 19L38 31L42 35Z" fill="#3B82F6"/>
+  <path d="M64 18H68V22L64 18Z" fill="#3B82F6"/>
+
+  <!-- Text "GROWTH HIRING" -->
+  <text x="75" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#F3F4F6">GROWTH</text>
+  <text x="75" y="43" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#60A5FA">HIRING</text>
+</svg>
