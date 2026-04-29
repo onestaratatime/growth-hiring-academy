@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import { Send } from "lucide-react"
 
 interface MessageFormProps {
   users: Array<{ id: string; name: string | null; email: string }>
@@ -60,20 +61,25 @@ export default function MessageForm({ users, courses, senderId }: MessageFormPro
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Type de message
-        </label>
-        <select
-          value={messageType}
-          onChange={(e) => setMessageType(e.target.value as "TEXT" | "ACCESS_GRANT")}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        >
-          <option value="TEXT">Message texte</option>
-          <option value="ACCESS_GRANT">Accès à une formation</option>
-        </select>
-      </div>
+    <div className="bg-white rounded-lg shadow-sm p-6 sticky top-6">
+      <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+        <Send className="h-5 w-5 mr-2 text-blue-600" />
+        Nouveau message
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Type de message
+          </label>
+          <select
+            value={messageType}
+            onChange={(e) => setMessageType(e.target.value as "TEXT" | "ACCESS_GRANT")}
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="TEXT">Message texte</option>
+            <option value="ACCESS_GRANT">Accès à une formation</option>
+          </select>
+        </div>
 
       <div>
         <label className="flex items-center space-x-2">
@@ -155,13 +161,14 @@ export default function MessageForm({ users, courses, senderId }: MessageFormPro
         />
       </div>
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {loading ? "Envoi..." : "Envoyer le message"}
-      </button>
-    </form>
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {loading ? "Envoi..." : "Envoyer le message"}
+        </button>
+      </form>
+    </div>
   )
 }

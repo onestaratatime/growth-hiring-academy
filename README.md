@@ -29,10 +29,11 @@ Une plateforme complète de gestion de formations en ligne avec CRM d'apprenants
 2. La base de données est déjà initialisée avec SQLite
 
 3. Des comptes ont été créés :
-   - **Admin** : admin@growthhiring.com / admin123
+   - **Admin** : admin@growth-hiring.com / admin123
    - **23 apprenants** importés avec le mot de passe : growth2025
    - **Formation Growth Hiring Academy 2025** avec 3 leçons créée
    - **Tous les apprenants à 100%** de complétion
+   - **23 messages d'onboarding** envoyés en janvier 2025
 
 ### Lancement
 
