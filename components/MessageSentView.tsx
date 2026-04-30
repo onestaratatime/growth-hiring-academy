@@ -15,9 +15,10 @@ interface Message {
 
 interface MessageSentViewProps {
   messages: Message[]
+  onMessageClick?: (messageId: string) => void
 }
 
-export default function MessageSentView({ messages }: MessageSentViewProps) {
+export default function MessageSentView({ messages, onMessageClick }: MessageSentViewProps) {
   return (
     <div className="flex-1 overflow-hidden flex flex-col">
       {/* Header */}
@@ -45,6 +46,7 @@ export default function MessageSentView({ messages }: MessageSentViewProps) {
             {messages.map((message) => (
               <div
                 key={message.id}
+                onClick={() => onMessageClick?.(message.id)}
                 className="px-6 py-4 bg-slate-900 hover:bg-slate-800 cursor-pointer transition"
               >
                 <div className="flex items-start space-x-4">
