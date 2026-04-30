@@ -25,7 +25,7 @@ export default async function MessagesPage() {
     })
 
     // Messages envoyés par l'admin
-    sentMessages = await prisma.message.findMany({
+    const rawSentMessages = await prisma.message.findMany({
       where: {
         senderId: session?.user?.id,
       },
@@ -34,6 +34,20 @@ export default async function MessagesPage() {
       },
       orderBy: { createdAt: 'desc' },
     })
+
+    // Récupérer les informations des destinataires
+    sentMessages = await Promise.all(
+      rawSentMessages.map(async (msg) => {
+        if (msg.recipientId) {
+          const recipient = await prisma.user.findUnique({
+            where: { id: msg.recipientId },
+            select: { id: true, name: true, email: true }
+          })
+          return { ...msg, recipient }
+        }
+        return { ...msg, recipient: null }
+      })
+    )
 
     users = await prisma.user.findMany({
       where: { role: "LEARNER" },

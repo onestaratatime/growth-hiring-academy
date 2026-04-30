@@ -13,10 +13,16 @@ interface Message {
   type: string
   metadata?: string | null
   senderId: string
+  recipientId?: string | null
   sender: {
     name: string | null
     email: string
   }
+  recipient?: {
+    id: string
+    name: string | null
+    email: string
+  } | null
 }
 
 interface MessageDetailViewProps {
@@ -109,20 +115,48 @@ export default function MessageDetailView({
               Message de {message.sender.name || message.sender.email}
             </h2>
 
-            <div className="flex items-center space-x-4 text-sm text-slate-400">
-              <div className="flex items-center space-x-2">
-                <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
-                  <span className="text-white text-sm font-medium">
-                    {message.sender.name?.charAt(0).toUpperCase() || message.sender.email.charAt(0).toUpperCase()}
-                  </span>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-4 text-sm text-slate-400">
+                <div className="flex items-center space-x-2">
+                  <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
+                    <span className="text-white text-sm font-medium">
+                      {message.sender.name?.charAt(0).toUpperCase() || message.sender.email.charAt(0).toUpperCase()}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-slate-300 font-medium">{message.sender.name || "Sans nom"}</p>
+                    <p className="text-slate-500 text-xs">{message.sender.email}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-slate-300 font-medium">{message.sender.name || "Sans nom"}</p>
-                  <p className="text-slate-500 text-xs">{message.sender.email}</p>
-                </div>
+                <span>•</span>
+                <span>{format(new Date(message.createdAt), "d MMMM yyyy 'à' HH:mm", { locale: fr })}</span>
               </div>
-              <span>•</span>
-              <span>{format(new Date(message.createdAt), "d MMMM yyyy 'à' HH:mm", { locale: fr })}</span>
+
+              {/* Show recipient if this is a sent message */}
+              {message.recipient && (
+                <div className="flex items-center space-x-2 text-sm">
+                  <span className="text-slate-500">À :</span>
+                  <div className="flex items-center space-x-2">
+                    <div className="h-6 w-6 rounded-full bg-green-500 flex items-center justify-center">
+                      <span className="text-white text-xs font-medium">
+                        {message.recipient.name?.charAt(0).toUpperCase() || message.recipient.email.charAt(0).toUpperCase()}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-slate-300 font-medium">{message.recipient.name || "Sans nom"}</p>
+                      <p className="text-slate-500 text-xs">{message.recipient.email}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Show "Tous les apprenants" for broadcast messages */}
+              {message.recipientId === null && (
+                <div className="flex items-center space-x-2 text-sm">
+                  <span className="text-slate-500">À :</span>
+                  <p className="text-blue-400 font-medium">Tous les apprenants</p>
+                </div>
+              )}
             </div>
 
             {message.type === "ACCESS_GRANT" && (

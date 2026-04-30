@@ -11,6 +11,11 @@ interface Message {
   recipientId: string | null
   type: string
   metadata?: string | null
+  recipient?: {
+    id: string
+    name: string | null
+    email: string
+  } | null
 }
 
 interface MessageSentViewProps {
@@ -63,9 +68,14 @@ export default function MessageSentView({ messages, onMessageClick }: MessageSen
                         ) : (
                           <>
                             <User className="h-4 w-4 text-slate-400" />
-                            <p className="text-sm font-medium text-slate-300">
-                              Destinataire individuel
-                            </p>
+                            <div className="flex flex-col">
+                              <p className="text-sm font-medium text-slate-300">
+                                {message.recipient?.name || "Destinataire"}
+                              </p>
+                              <p className="text-xs text-slate-500">
+                                {message.recipient?.email || ""}
+                              </p>
+                            </div>
                           </>
                         )}
                       </div>
