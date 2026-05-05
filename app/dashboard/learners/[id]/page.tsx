@@ -49,6 +49,13 @@ export default async function LearnerDetailPage({
       ? learner.enrollments.reduce((sum, e) => sum + e.progress, 0) / totalEnrollments
       : 0
 
+  // Get the earliest enrollment date or fallback to createdAt
+  const enrollmentDate = learner.enrollments.length > 0
+    ? learner.enrollments.reduce((earliest, e) =>
+        new Date(e.enrolledAt) < new Date(earliest.enrolledAt) ? e : earliest
+      ).enrolledAt
+    : learner.createdAt
+
   return (
     <div>
       <div className="mb-8">
@@ -76,7 +83,7 @@ export default async function LearnerDetailPage({
                   </div>
                   <div className="flex items-center text-gray-600">
                     <Calendar className="h-4 w-4 mr-2" />
-                    Inscrit le {format(new Date(learner.createdAt), "d MMMM yyyy", { locale: fr })}
+                    Inscrit le {format(new Date(enrollmentDate), "d MMMM yyyy", { locale: fr })}
                   </div>
                 </div>
               </div>
