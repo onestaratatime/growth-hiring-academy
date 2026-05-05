@@ -97,6 +97,13 @@ export default async function LearnersPage() {
                       learner.enrollments.length
                     : 0
 
+                // Get the earliest enrollment date
+                const enrollmentDate = learner.enrollments.length > 0
+                  ? learner.enrollments.reduce((earliest, e) =>
+                      new Date(e.enrolledAt) < new Date(earliest.enrolledAt) ? e : earliest
+                    ).enrolledAt
+                  : learner.createdAt
+
                 return (
                   <tr key={learner.id} className="hover:bg-slate-700">
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -135,7 +142,7 @@ export default async function LearnersPage() {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-400">
-                      {format(new Date(learner.createdAt), "d MMM yyyy", { locale: fr })}
+                      {format(new Date(enrollmentDate), "d MMM yyyy", { locale: fr })}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <div className="flex items-center justify-end space-x-2">
